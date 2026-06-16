@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hip Hop Boobly Show</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   HIP HOP BOOBLY SHOW  —  Wix rebuild reference layout
+   Each <section class="page"> = one Wix PAGE.
+   Each <div class="strip"> inside = one Wix SECTION/STRIP.
+   Colors, fonts and images below map 1:1 to Wix settings.
+   ============================================================ */
+:root{
+  --sky-top:#4FB8EE; --sky-mid:#86D2F6; --sky-low:#C7ECFC;
+  --blue:#1E9BE6; --blue-d:#1278C2;
+  --red:#EE3D5C;  --red-d:#D32a47;
+  --green:#5CC22E;--green-d:#46A41C;
+  --orange:#FB9A1E;--orange-d:#E8820A;
+  --purple:#9B59D0;--purple-d:#7E3FB8;
+  --pink:#F472A6;
+  --teal:#16B5C3;
+  --yellow:#FFC42E;
+  --cream:#FFF4DE;
+  --ink:#2C2358;
+  --gray:#6B6B86;
+  --line:#E7E7F2;
+  --shadow:0 10px 28px rgba(40,40,90,.12);
+  --shadow-s:0 6px 16px rgba(40,40,90,.10);
+  --r:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:"Nunito",system-ui,sans-serif;color:var(--ink);
+  background:#EAF7FE;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:"Fredoka",sans-serif;margin:0;line-height:1.08;font-weight:600}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:"Fredoka",sans-serif;
+  font-weight:600;font-size:16px;color:#fff;padding:13px 24px;border-radius:40px;
+  border:none;cursor:pointer;box-shadow:var(--shadow-s);transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(40,40,90,.2)}
+.btn .ic{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.28);
+  display:grid;place-items:center;font-size:13px}
+.btn-red{background:var(--red)} .btn-blue{background:var(--blue)}
+.btn-green{background:var(--green)} .btn-orange{background:var(--orange)}
+.btn-purple{background:var(--purple)} .btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+
+/* ---------- HEADER ---------- */
+header.bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);border-bottom:3px solid #EAF1F6}
+.bar-inner{display:flex;align-items:center;gap:18px;padding:10px 22px;max-width:1280px;margin:0 auto}
+.logo{height:62px;width:auto;flex:none}
+nav.menu{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav.menu a{display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:7px 10px;border-radius:14px;font-family:"Fredoka",sans-serif;font-weight:600;
+  font-size:12.5px;letter-spacing:.2px;color:var(--ink);transition:background .15s,color .15s}
+nav.menu a .nic{font-size:19px;line-height:1}
+nav.menu a:hover{background:#EAF6FD;color:var(--blue)}
+nav.menu a.active{background:#E3F2FD;color:var(--blue)}
+nav.menu a.active::after{content:"";width:18px;height:3px;border-radius:3px;background:var(--blue);margin-top:1px}
+.burger{display:none;margin-left:auto;font-size:30px;background:none;border:none;color:var(--ink);cursor:pointer}
+
+/* ---------- PAGE SWITCHING ---------- */
+.page{display:none;animation:fade .35s ease}
+.page.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.strip{padding:54px 0}
+.strip.tight{padding:40px 0}
+
+/* ---------- HERO (home) ---------- */
+.hero{position:relative;overflow:hidden;
+  background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 55%,var(--sky-low) 100%)}
+.hero::before{content:"";position:absolute;inset:0;
+  background:
+   radial-gradient(60px 26px at 16% 30%,#fff 60%,transparent 62%),
+   radial-gradient(80px 30px at 22% 34%,#fff 60%,transparent 62%),
+   radial-gradient(54px 22px at 78% 22%,#fff 60%,transparent 62%),
+   radial-gradient(70px 26px at 84% 26%,#fff 60%,transparent 62%);
+  opacity:.85;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:24px;
+  align-items:center;min-height:480px;padding:30px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--purple);
+  font-family:"Fredoka";font-weight:600;font-size:13px;padding:6px 14px;border-radius:30px;
+  box-shadow:var(--shadow-s);margin-bottom:14px}
+.hero h1{font-size:clamp(46px,7vw,86px);font-weight:700;letter-spacing:-1px;
+  text-shadow:0 3px 0 rgba(255,255,255,.55)}
+.hero h1 .l{color:#2196F3}.hero h1 .d{color:var(--red)}
+.hero h1 .s{color:var(--teal)}.hero h1 .g{color:var(--green)}
+.hero p.sub{font-size:18px;font-weight:700;color:#234;max-width:430px;margin:14px 0 22px;
+  background:rgba(255,255,255,.55);padding:10px 14px;border-radius:16px;display:inline-block}
+.hero p.sub b{color:var(--blue)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{position:relative;display:grid;place-items:center}
+.hero-art img.boobly{width:min(420px,90%);filter:drop-shadow(0 18px 22px rgba(0,0,0,.18))}
+.cloud{position:absolute;top:6px;right:0;background:#fff;border-radius:30px;padding:14px 20px;
+  box-shadow:var(--shadow);text-align:center;transform:rotate(-3deg)}
+.cloud b{font-family:"Fredoka";font-weight:700;font-size:22px;display:block;line-height:1.15}
+.cloud .be1{color:var(--yellow)}.cloud .be2{color:var(--green)}.cloud .be3{color:var(--blue)}
+.chick{position:absolute;bottom:8px;left:4%;width:92px;border-radius:14px;transform:rotate(-6deg);
+  box-shadow:var(--shadow-s)}
+
+/* ---------- 6 CARD ROW ---------- */
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;
+  display:flex;flex-direction:column;border:1px solid #F0F0F8}
+.card .cap{position:relative;height:118px;display:grid;place-items:center;overflow:hidden}
+.card .cap img{height:100%;width:100%;object-fit:cover}
+.card .badge{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;
+  font-family:"Fredoka";font-weight:600;font-size:10px;padding:3px 9px;border-radius:20px}
+.card .ico{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;
+  background:#fff;display:grid;place-items:center;font-size:15px;box-shadow:var(--shadow-s)}
+.card .body{padding:14px 13px 16px;display:flex;flex-direction:column;flex:1;text-align:center}
+.card h4{font-size:16px;margin-bottom:6px}
+.card p{font-size:12.5px;color:var(--gray);margin:0 0 12px;flex:1}
+.card .btn{align-self:center;margin-top:auto}
+.c1 h4{color:var(--red)} .c2 h4{color:var(--green)} .c3 h4{color:var(--orange)}
+.c4 h4{color:var(--blue)} .c5 h4{color:var(--purple)} .c6 h4{color:var(--red)}
+
+/* ---------- INFO BAR ---------- */
+.infobar{background:var(--cream)}
+.info-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:center}
+.info{display:flex;gap:11px;align-items:flex-start}
+.info .em{font-size:26px;flex:none}
+.info .lab{font-family:"Fredoka";font-weight:700;font-size:13px;letter-spacing:.4px;
+  text-transform:uppercase;display:block;margin-bottom:2px}
+.info .val{font-size:13px;color:#444;font-weight:700}
+.info .lnk{font-size:12px;color:var(--blue);font-weight:800}
+.i1 .lab{color:var(--purple)}.i2 .lab{color:var(--green)}.i3 .lab{color:var(--purple)}
+.i4 .lab{color:var(--blue)}.i5 .lab{color:var(--pink)}
+.socline{display:flex;gap:9px;margin-top:6px}
+.socline a{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+  background:#fff;box-shadow:var(--shadow-s);font-size:15px}
+
+/* ---------- GENERIC PAGE HEADER ---------- */
+.phead{background:linear-gradient(180deg,var(--sky-top),var(--sky-low));
+  text-align:center;padding:46px 0 40px;position:relative;overflow:hidden}
+.phead::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:26px;
+  background:#EAF7FE;border-radius:50% 50% 0 0/100% 100% 0 0}
+.phead h1{font-size:clamp(34px,5vw,56px);font-weight:700;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.12)}
+.phead p{color:#0b3a52;font-weight:700;font-size:17px;margin-top:10px;
+  background:rgba(255,255,255,.6);display:inline-block;padding:7px 16px;border-radius:20px}
+.eyebrow{font-family:"Fredoka";font-weight:600;text-transform:uppercase;letter-spacing:2px;
+  font-size:13px;color:var(--blue);text-align:center;display:block;margin-bottom:8px}
+.sec-h2{font-size:clamp(28px,4vw,40px);font-weight:700;text-align:center;margin-bottom:6px}
+.sec-sub{text-align:center;color:var(--gray);font-weight:600;max-width:620px;margin:0 auto 30px}
+
+/* ---------- VIDEO GRID ---------- */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vcard{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.vthumb{position:relative;aspect-ratio:16/9;background:#000}
+.vthumb iframe{width:100%;height:100%;border:0;display:block}
+.vcard .vt{padding:13px 15px 16px;font-family:"Fredoka";font-weight:600;font-size:15px}
+.vcard .vt span{display:block;font-family:"Nunito";font-weight:700;color:var(--gray);font-size:12.5px;margin-top:3px}
+
+/* ---------- MUSIC ---------- */
+.stream{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:38px}
+.stream a{display:flex;align-items:center;gap:10px;background:#fff;border-radius:40px;
+  padding:12px 22px;box-shadow:var(--shadow-s);font-family:"Fredoka";font-weight:600;font-size:15px;
+  border:2px solid transparent;transition:transform .15s,border-color .15s}
+.stream a:hover{transform:translateY(-2px);border-color:var(--blue)}
+.stream .dot{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:12px}
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.album{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.album img{aspect-ratio:1;object-fit:cover;width:100%}
+.album .an{padding:12px;text-align:center;font-family:"Fredoka";font-weight:600;font-size:14px}
+.album .an span{display:block;color:var(--gray);font-family:"Nunito";font-weight:700;font-size:12px}
+
+/* ---------- PRINTABLES ---------- */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);text-align:center}
+.pcard .pi{aspect-ratio:4/3;background:#F4F8FB;overflow:hidden}
+.pcard .pi img{width:100%;height:100%;object-fit:cover}
+.pcard .pb{padding:15px}
+.pcard h4{font-size:16px;margin-bottom:10px;color:var(--orange)}
+
+/* ---------- ABOUT / CHARACTERS ---------- */
+.about-hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.about-hero img{border-radius:var(--r);box-shadow:var(--shadow)}
+.about-hero .mission{font-size:17px;color:#33335a;font-weight:700}
+.chars{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:10px}
+.char{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;text-align:center}
+.char .ch-img{aspect-ratio:1;background:linear-gradient(180deg,#EAF6FF,#fff);display:grid;place-items:center;padding:10px}
+.char .ch-img img{height:100%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.12))}
+.char .cb{padding:6px 13px 18px}
+.char h4{font-size:17px;margin-bottom:6px}
+.char p{font-size:12.5px;color:var(--gray);font-weight:600;margin:0}
+.char.k0 h4{color:var(--red)}.char.k1 h4{color:var(--pink)}.char.k2 h4{color:var(--purple)}
+.char.k3 h4{color:var(--blue)}.char.k4 h4{color:var(--green)}
+
+/* ---------- SHOP ---------- */
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;text-align:center}
+.product .pim{aspect-ratio:1;background:#F3F7FB;display:grid;place-items:center;padding:18px}
+.product .pim img{height:100%;object-fit:contain}
+.product .pbd{padding:8px 16px 20px}
+.product h4{font-size:17px;margin-bottom:4px}
+.product .price{font-family:"Fredoka";font-weight:700;color:var(--blue);font-size:18px;margin:6px 0 12px}
+
+/* ---------- FORMS / PALS / SCHOOL / CONTACT ---------- */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.split img{border-radius:var(--r);box-shadow:var(--shadow)}
+.checklist{list-style:none;padding:0;margin:18px 0 0}
+.checklist li{display:flex;gap:10px;align-items:flex-start;font-weight:700;color:#3a3a5c;margin-bottom:11px}
+.checklist li::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--blue);
+  margin-top:7px;flex:none;box-shadow:0 0 0 4px #DCEEFB}
+.formcard{background:#fff;border-radius:26px;box-shadow:var(--shadow);padding:28px}
+.formcard h3{font-size:24px;margin-bottom:6px;color:var(--purple)}
+.formcard p.fp{color:var(--gray);font-weight:600;font-size:14px;margin:0 0 18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-family:"Fredoka";font-weight:600;font-size:13px;margin-bottom:5px;color:#444}
+.field input,.field textarea,.field select{width:100%;padding:12px 15px;border:2px solid var(--line);
+  border-radius:14px;font-family:"Nunito";font-weight:600;font-size:15px;background:#FBFCFE;color:var(--ink)}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--blue)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{font-size:11.5px;color:#9a9ab0;margin-top:8px}
+
+/* ---------- PARTNERS ---------- */
+.partners{display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap;opacity:.9}
+.partners img{height:54px;width:auto;object-fit:contain;filter:grayscale(.1)}
+
+/* ---------- SUBSCRIBE STRIP ---------- */
+.subscribe{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;text-align:center;border-radius:28px;padding:40px 26px;margin:0 22px}
+.subscribe h2{font-size:32px;color:#fff;margin-bottom:8px}
+.subscribe p{font-weight:700;opacity:.95;margin:0 0 18px}
+.subrow{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.subrow input{flex:1;min-width:220px;padding:13px 16px;border:none;border-radius:40px;font-family:"Nunito";font-weight:600;font-size:15px}
+
+/* ---------- FOOTER ---------- */
+footer.ft{background:#21204A;color:#cfd0e6;padding:46px 0 26px;margin-top:10px}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px}
+.ft h5{font-family:"Fredoka";font-weight:600;color:#fff;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin:0 0 12px}
+.ft a,.ft p{color:#b9bad6;font-size:13.5px;font-weight:600;margin:0 0 8px}
+.ft a:hover{color:#fff}
+.ft .logo-ft{height:58px;margin-bottom:12px}
+.ft-soc{display:flex;gap:10px}
+.ft-soc a{width:34px;height:34px;border-radius:10px;background:#33326b;display:grid;place-items:center;font-size:16px}
+.ft-bottom{border-top:1px solid #3a3970;margin-top:30px;padding-top:18px;text-align:center;font-size:12px;color:#8a8ab5}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1050px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .info-grid{grid-template-columns:repeat(3,1fr);gap:22px}
+  .albums{grid-template-columns:repeat(2,1fr)}
+  .chars{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:820px){
+  .burger{display:block}
+  nav.menu{display:none;position:absolute;top:84px;left:0;right:0;background:#fff;flex-direction:column;
+    padding:12px;box-shadow:var(--shadow);gap:2px}
+  nav.menu.open{display:flex}
+  nav.menu a{flex-direction:row;justify-content:flex-start;gap:10px;width:100%;font-size:15px;padding:11px 14px}
+  nav.menu a.active::after{display:none}
+  .hero-grid{grid-template-columns:1fr;text-align:center;min-height:auto}
+  .hero-cta{justify-content:center}.hero p.sub{margin-left:auto;margin-right:auto}
+  .cloud{position:static;display:inline-block;margin:0 auto 14px;transform:none}
+  .chick{display:none}
+  .vgrid,.pgrid,.shop-grid{grid-template-columns:1fr}
+  .about-hero,.split{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .cards{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr 1fr}
+  .albums,.chars{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- =======================================================
+     SHARED HEADER  (Wix: site header, same on every page)
+     ======================================================= -->
+<header class="bar">
+  <div class="bar-inner">
+    <img class="logo" alt="Hip Hop Boobly Show"
+      src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/7eff77fc-3b08-450d-92ba-b43b18ca1055/hip+hop+boobly+logo+png.png?format=500w">
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <nav class="menu" id="menu">
+      <a data-go="home" class="active"><span class="nic">🏠</span>Home</a>
+      <a data-go="watch"><span class="nic">▶️</span>Watch</a>
+      <a data-go="music"><span class="nic">🎵</span>Music</a>
+      <a data-go="resources"><span class="nic">📖</span>Resources</a>
+      <a data-go="school"><span class="nic">🏫</span>School Visits</a>
+      <a data-go="pals"><span class="nic">💜</span>Boobly Pals</a>
+      <a data-go="shop"><span class="nic">🛍️</span>Shop</a>
+      <a data-go="about"><span class="nic">👫</span>About</a>
+      <a data-go="contact"><span class="nic">✉️</span>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =======================================================
+     PAGE: HOME
+     ======================================================= -->
+<section class="page show" id="home">
+
+  <!-- STRIP: Hero -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">✨ Fun • Educational • Kid-safe</span>
+        <h1><span class="l">Learn.</span><br><span class="d">Dance.</span><br><span class="s">Sing.</span><br><span class="g">Grow!</span></h1>
+        <p class="sub">Fun, educational songs and shows that inspire kids to be <b>confident</b>, <b>kind</b> and <b>unstoppable!</b></p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="https://www.youtube.com/@HipHopBooblyShow" target="_blank"><span class="ic">▶</span> Watch on YouTube</a>
+          <a class="btn btn-blue" data-go="music"><span class="ic">♪</span> Listen to Music</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="cloud"><b class="be1">Be Kind</b><b class="be2">Be You</b><b class="be3">Be Great! 💜</b></div>
+        <img class="boobly" alt="Hip Hop Boobly"
+          src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/845eb588-949f-4139-a913-0df380982206/Boobly.png?format=900w">
+        <img class="chick" alt="Boobly chick" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/3398f6e6-8e97-4c53-befe-a5fe062541c9/Bird.jpg?format=300w">
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIP: 6 quick-link cards -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="cards">
+        <div class="card c1">
+          <div class="cap"><span class="badge">NEW EPISODE!</span><span class="ico">🎧</span>
+            <img alt="Watch" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/8a109ce1-37fc-4d1e-be86-1c5339a20ade/HHB_web_Banner_updated.jpg?format=600w"></div>
+          <div class="body"><h4>Watch Hip Hop Boobly</h4><p>Fun episodes on YouTube!</p><a class="btn btn-red btn-sm" data-go="watch">Watch Now ›</a></div>
+        </div>
+        <div class="card c2">
+          <div class="cap" style="background:#E8F8E1"><span class="ico">🎵</span>
+            <img alt="Dance" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/d60a511d-076d-4d01-a3a6-7dd5534b9edf/deezyo_0001.png?format=500w" style="object-fit:contain;padding:8px"></div>
+          <div class="body"><h4>Dance &amp; Sing</h4><p>Positive songs kids love to sing and move to!</p><a class="btn btn-green btn-sm" data-go="music">Listen Now ›</a></div>
+        </div>
+        <div class="card c3">
+          <div class="cap" style="background:#FFF1DD"><span class="ico">✏️</span>
+            <img alt="Resources" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/a5e881ea-17bd-4849-963c-65449b2ec3bf/HHB+Maze.jpg?format=500w"></div>
+          <div class="body"><h4>Free Resources</h4><p>Printables, activities, coloring pages &amp; more!</p><a class="btn btn-orange btn-sm" data-go="resources">Explore Now ›</a></div>
+        </div>
+        <div class="card c4">
+          <div class="cap" style="background:#E3F2FD"><span class="ico">🏫</span>
+            <img alt="School" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/c01b6bf8-2af0-410a-b850-9cb2cfe2a47c/0003.png?format=500w" style="object-fit:contain;padding:8px"></div>
+          <div class="body"><h4>Book Boobly</h4><p>Bring Hip Hop Boobly to your school or event!</p><a class="btn btn-blue btn-sm" data-go="school">Book Now ›</a></div>
+        </div>
+        <div class="card c5">
+          <div class="cap" style="background:#F3E8FB"><span class="ico">💜</span>
+            <img alt="Pals" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/0f077c19-4b32-4c42-9084-697ac175b4d6/pals.png?format=600w"></div>
+          <div class="body"><h4>Become a Boobly Pal</h4><p>Join the club for exclusive fun, perks &amp; surprises!</p><a class="btn btn-purple btn-sm" data-go="pals">Join Now ›</a></div>
+        </div>
+        <div class="card c6">
+          <div class="cap" style="background:#FDE7EC"><span class="ico">🛍️</span>
+            <img alt="Shop" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/9a7afff3-8d72-4120-bc52-97b4337c0204/Hip-hop-Boobly-Hoddie-v06.5+%281%29.png?format=500w" style="object-fit:contain;padding:8px"></div>
+          <div class="body"><h4>Visit the Shop</h4><p>Awesome shirts, books, toys &amp; more!</p><a class="btn btn-red btn-sm" data-go="shop">Shop Now ›</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIP: Info bar -->
+  <div class="infobar strip tight">
+    <div class="wrap">
+      <div class="info-grid">
+        <div class="info i1"><div class="em">🎶</div><div><span class="lab">Song of the Week</span><span class="val">Positive Vibes</span><br><a class="lnk" data-go="music">Listen Now →</a></div></div>
+        <div class="info i2"><div class="em">🔢</div><div><span class="lab">Printable of the Month</span><span class="val">Counting Fun!</span><br><a class="lnk" data-go="resources">Download Now →</a></div></div>
+        <div class="info i3"><div class="em">💡</div><div><span class="lab">Parent Tip</span><span class="val">Praise your child's effort, not just the result!</span></div></div>
+        <div class="info i4"><div class="em">📅</div><div><span class="lab">Upcoming Event</span><span class="val">Boobly is reading at Bright Start Academy! May 30</span><br><a class="lnk" data-go="school">Learn More →</a></div></div>
+        <div class="info i5"><div class="em">📣</div><div><span class="lab">Follow Boobly!</span>
+          <div class="socline">
+            <a href="https://www.youtube.com/@HipHopBooblyShow" target="_blank">▶</a>
+            <a href="http://instagram.com/hiphopboobly" target="_blank">📷</a>
+            <a href="#" target="_blank">🎵</a>
+            <a href="https://www.facebook.com/HipHopBooblyShow" target="_blank">f</a>
+          </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIP: Music teaser -->
+  <div class="strip">
+    <div class="wrap">
+      <span class="eyebrow">New Music Every Month</span>
+      <h2 class="sec-h2">Fresh Boobly tunes, all year round 🎧</h2>
+      <p class="sec-sub">Brand-new positive songs drop every single month. Stream the Boobly Mix on all your favorite platforms.</p>
+      <div class="albums">
+        <div class="album"><img alt="Boobly Mix Vol 9" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/48e59e16-49c0-4546-987f-506212d80485/BooblyMix_Vol9.jpg?format=500w"><div class="an">Boobly Mix Vol. 9<span>Latest release</span></div></div>
+        <div class="album"><img alt="Boobly Mix Vol 8" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/d6a24ae5-52b9-4701-8942-778bfd2ec80f/BooblyMix_Vol8.jpg?format=500w"><div class="an">Boobly Mix Vol. 8<span>Sing &amp; dance</span></div></div>
+        <div class="album"><img alt="Boobly Mix Vol 7" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/2a9fbd0a-9e77-4ed0-8349-c539850feab2/BooblyMix_Vol7_FINAL_HIRES.jpg?format=500w"><div class="an">Boobly Mix Vol. 7<span>Kids favorites</span></div></div>
+        <div class="album"><img alt="Boobly Mix Vol 6" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/84bb7f4a-b816-4fa3-bec5-af18fd9b317c/BooblyMix_Vol6.jpg?format=500w"><div class="an">Boobly Mix Vol. 6<span>Feel-good hits</span></div></div>
+      </div>
+      <div style="text-align:center;margin-top:26px"><a class="btn btn-blue" data-go="music">Listen to all music ›</a></div>
+    </div>
+  </div>
+
+  <!-- STRIP: Partners -->
+  <div class="strip tight">
+    <div class="wrap">
+      <h3 style="text-align:center;font-size:20px;letter-spacing:1px;color:var(--gray);margin-bottom:22px">OUR PARTNERS</h3>
+      <div class="partners">
+        <img alt="Google" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/341dbb0c-fc3b-4dda-9c10-5166d3cb8764/Google_2015_logo.svg.png?format=300w">
+        <img alt="PEP" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/1a61cf3d-df9f-4d26-a4bf-3b7582702360/PEP.png?format=300w">
+        <img alt="Lego Robotics Club" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/8d477c1e-805d-4c30-9188-80d00169dc79/LegoRoboticsClub_logo_color.png?format=300w">
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIP: Subscribe -->
+  <div class="strip tight">
+    <div class="subscribe">
+      <h2>Subscribe 💌</h2>
+      <p>Sign up with your email address to receive news and updates.</p>
+      <div class="subrow"><input type="email" placeholder="Your email address"><button class="btn btn-yellow">Subscribe</button></div>
+      <p style="font-size:12px;margin-top:12px;opacity:.85">We respect your privacy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: WATCH
+     ======================================================= -->
+<section class="page" id="watch">
+  <div class="phead"><div class="wrap"><h1>Watch &amp; Learn ▶️</h1><p>Fun, positive episodes the whole family can enjoy.</p></div></div>
+  <div class="strip">
+    <div class="wrap">
+      <span class="eyebrow">Latest Episodes</span>
+      <h2 class="sec-h2">New videos on YouTube 🎬</h2>
+      <p class="sec-sub">Sing along, dance along, and learn something new with the Hip Hop Boobly Squad.</p>
+      <div class="vgrid">
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/AkHd6AuZAQw" title="Hip Hop Boobly" allowfullscreen></iframe></div><div class="vt">Wash, Eat, Rinse, Repeat<span>Healthy habits song</span></div></div>
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/LExXhBfrOAo" title="Hip Hop Boobly" allowfullscreen></iframe></div><div class="vt">Believe It<span>Confidence anthem</span></div></div>
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/ZEvrR6Rs-AA" title="Hip Hop Boobly" allowfullscreen></iframe></div><div class="vt">Boobly Boom<span>Dance version</span></div></div>
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/qvxLp5EgNPg" title="Hip Hop Boobly" allowfullscreen></iframe></div><div class="vt">The Seasons Song<span>Learn the 4 seasons</span></div></div>
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/vIfcpCIM_nc" title="Hip Hop Boobly" allowfullscreen></iframe></div><div class="vt">Learning with Boobly<span>Educational fun</span></div></div>
+        <div class="vcard"><div class="vthumb" style="display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple))"><div style="text-align:center;color:#fff;padding:20px"><div style="font-size:40px">▶️</div><div style="font-family:Fredoka;font-weight:600;font-size:18px">Watch the full channel</div></div></div><div class="vt">More on YouTube<span>New uploads every week</span></div></div>
+      </div>
+      <div style="text-align:center;margin-top:30px"><a class="btn btn-red" href="https://www.youtube.com/@HipHopBooblyShow" target="_blank"><span class="ic">▶</span> Subscribe on YouTube</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: MUSIC
+     ======================================================= -->
+<section class="page" id="music">
+  <div class="phead"><div class="wrap"><h1>Music 🎵</h1><p>Listen to your favorite music from Hip Hop Boobly.</p></div></div>
+  <div class="strip">
+    <div class="wrap">
+      <span class="eyebrow">Stream Everywhere</span>
+      <h2 class="sec-h2">Find Boobly on every platform 🎧</h2>
+      <p class="sec-sub">New music every month! Tap your favorite app to start listening.</p>
+      <div class="stream">
+        <a href="https://open.spotify.com/artist/4Z0fxZ7GMw6HGwyhr51GV1" target="_blank"><span class="dot" style="background:#1DB954">♫</span> Spotify</a>
+        <a href="https://music.apple.com/us/artist/hip-hop-boobly-show/1713600674" target="_blank"><span class="dot" style="background:#FA57C1"></span> Apple Music</a>
+        <a href="https://music.amazon.com/artists/B0CMGS92DF/hip-hop-boobly-show" target="_blank"><span class="dot" style="background:#00A8E1"></span> Amazon Music</a>
+        <a href="https://music.youtube.com/channel/UCeQxc2CKf8k_AWvkK4pEkfQ" target="_blank"><span class="dot" style="background:#FF0000">▶</span> YouTube Music</a>
+      </div>
+      <div class="albums">
+        <div class="album"><img alt="Vol 9" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/48e59e16-49c0-4546-987f-506212d80485/BooblyMix_Vol9.jpg?format=500w"><div class="an">Boobly Mix Vol. 9<span>2025</span></div></div>
+        <div class="album"><img alt="Vol 8" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/d6a24ae5-52b9-4701-8942-778bfd2ec80f/BooblyMix_Vol8.jpg?format=500w"><div class="an">Boobly Mix Vol. 8<span>2025</span></div></div>
+        <div class="album"><img alt="Vol 7" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/2a9fbd0a-9e77-4ed0-8349-c539850feab2/BooblyMix_Vol7_FINAL_HIRES.jpg?format=500w"><div class="an">Boobly Mix Vol. 7<span>2024</span></div></div>
+        <div class="album"><img alt="Vol 6" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/84bb7f4a-b816-4fa3-bec5-af18fd9b317c/BooblyMix_Vol6.jpg?format=500w"><div class="an">Boobly Mix Vol. 6<span>2024</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: RESOURCES  (old "Learning Zone")
+     ======================================================= -->
+<section class="page" id="resources">
+  <div class="phead"><div class="wrap"><h1>Free Resources 📖</h1><p>Printables, activities, coloring pages and learning videos.</p></div></div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow" style="text-align:left">Learning Video</span>
+          <h2 style="font-size:34px;margin-bottom:12px">The Seasons 🍂❄️🌸☀️</h2>
+          <p style="font-weight:700;color:#44446a">Get ready to sing, dance, and learn with the Hip Hop Boobly Squad! This animated Seasons Song Video for Children is perfect for preschool and kindergarten learners, teaching the four seasons in a fun, memorable way.</p>
+          <div style="margin-top:18px"><a class="btn btn-green" data-go="watch"><span class="ic">▶</span> Watch on the Watch page</a></div>
+        </div>
+        <div class="vcard"><div class="vthumb"><iframe src="https://www.youtube.com/embed/qvxLp5EgNPg" title="The Seasons" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip tight">
+    <div class="wrap">
+      <span class="eyebrow">Printable of the Month</span>
+      <h2 class="sec-h2">Activity sheets &amp; coloring pages 🖍️</h2>
+      <p class="sec-sub">Free downloadable fun for home and the classroom. New printables added every month.</p>
+      <div class="pgrid">
+        <div class="pcard"><div class="pi"><img alt="Connect the dots" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/81393f52-0b35-4f68-a872-23784365188d/Boobly+Connect+The+Dots.jpg?format=600w"></div><div class="pb"><h4>Connect the Dots</h4><a class="btn btn-orange btn-sm">Download ›</a></div></div>
+        <div class="pcard"><div class="pi"><img alt="Maze" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/a5e881ea-17bd-4849-963c-65449b2ec3bf/HHB+Maze.jpg?format=600w"></div><div class="pb"><h4>Boobly Maze</h4><a class="btn btn-orange btn-sm">Download ›</a></div></div>
+        <div class="pcard"><div class="pi"><img alt="Seek and find" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/c612df73-788b-4d43-8f63-34fc99451167/Boobly+Microphone+Seek+N+Find.jpg?format=600w"></div><div class="pb"><h4>Microphone Seek &amp; Find</h4><a class="btn btn-orange btn-sm">Download ›</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: SCHOOL VISITS  (NEW — fresh copy + booking form)
+     ======================================================= -->
+<section class="page" id="school">
+  <div class="phead"><div class="wrap"><h1>School Visits 🏫</h1><p>Bring the energy, music and positive messages of Hip Hop Boobly to your school or event!</p></div></div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow" style="text-align:left">Book Boobly</span>
+          <h2 style="font-size:34px;margin-bottom:10px">A live show kids will never forget 🎤</h2>
+          <p style="font-weight:700;color:#44446a">Hip Hop Boobly turns assemblies, reading days, and special events into a sing-along celebration of confidence, kindness and learning. Every visit is high-energy, age-appropriate, and built around positive messages your students will carry home.</p>
+          <ul class="checklist">
+            <li>Interactive sing-along and dance performance</li>
+            <li>Positive themes: be kind, be you, be great</li>
+            <li>Reading sessions and learning activities</li>
+            <li>Meet-and-greet with the Boobly Squad</li>
+            <li>Flexible formats for assemblies, classrooms and festivals</li>
+          </ul>
+        </div>
+        <div class="formcard">
+          <h3>Request a Visit</h3>
+          <p class="fp">Tell us about your event and we'll get back to you with availability.</p>
+          <div class="two">
+            <div class="field"><label>School / Organization</label><input placeholder="Bright Start Academy"></div>
+            <div class="field"><label>Your Name</label><input placeholder="Full name"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+            <div class="field"><label>Phone</label><input placeholder="(000) 000-0000"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label>Event Date</label><input type="date"></div>
+            <div class="field"><label>Type of Event</label><select><option>Assembly</option><option>Reading day</option><option>Classroom visit</option><option>Festival / Community</option><option>Other</option></select></div>
+          </div>
+          <div class="field"><label>Tell us more</label><textarea rows="3" placeholder="Audience size, age group, location, anything else…"></textarea></div>
+          <button class="btn btn-blue" style="width:100%;justify-content:center">Send Request</button>
+          <p class="note">We'll only use your details to respond to your booking request.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: BOOBLY PALS
+     ======================================================= -->
+<section class="page" id="pals">
+  <div class="phead"><div class="wrap"><h1>Become a Boobly Pal 💜</h1><p>Join the club for exclusive fun, perks and surprises!</p></div></div>
+  <div class="strip">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <img alt="Boobly Pals" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/0f077c19-4b32-4c42-9084-697ac175b4d6/pals.png?format=1000w">
+          <ul class="checklist" style="margin-top:22px">
+            <li>Exclusive content and activity sheets</li>
+            <li>A chance to be a Boobly Pal on the show</li>
+            <li>Alerts when new music comes out each month</li>
+            <li>Prizes and merch giveaways</li>
+          </ul>
+        </div>
+        <div class="formcard">
+          <h3>Enter the Drawing 🎁</h3>
+          <p class="fp">Enter the drawing to receive Boobly merchandise. Sign up with your email address to receive prizes and giveaways!</p>
+          <div class="field"><label>Child's First Name</label><input placeholder="First name"></div>
+          <div class="field"><label>Parent / Guardian Email</label><input type="email" placeholder="parent@email.com"></div>
+          <div class="field"><label>Age</label><select><option>3-4</option><option>5-6</option><option>7-8</option><option>9+</option></select></div>
+          <button class="btn btn-purple" style="width:100%;justify-content:center">Join the Boobly Pals</button>
+          <p class="note">We respect your privacy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: SHOP
+     ======================================================= -->
+<section class="page" id="shop">
+  <div class="phead"><div class="wrap"><h1>Boobly Shop 🛍️</h1><p>Order your Boobly merch now! Awesome shirts, books, toys and more.</p></div></div>
+  <div class="strip">
+    <div class="wrap">
+      <div class="shop-grid">
+        <div class="product"><div class="pim"><img alt="Hoodie" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/9a7afff3-8d72-4120-bc52-97b4337c0204/Hip-hop-Boobly-Hoddie-v06.5+%281%29.png?format=600w"></div><div class="pbd"><h4>Boobly Hoodie</h4><div class="price">$39.99</div><a class="btn btn-red btn-sm" href="https://www.hiphopboobly.store" target="_blank">Buy Now ›</a></div></div>
+        <div class="product"><div class="pim"><img alt="Hoodie" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/bd330020-1104-4db8-8cd8-7d32f5059eba/Hip-hop-Boobly-Hoddie-v06.6.png?format=600w"></div><div class="pbd"><h4>Boobly Hoodie — Style 2</h4><div class="price">$39.99</div><a class="btn btn-red btn-sm" href="https://www.hiphopboobly.store" target="_blank">Buy Now ›</a></div></div>
+        <div class="product"><div class="pim"><img alt="Hoodie" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/e506d176-9422-4694-b473-6166601e1937/Hip-hop-Boobly-Hoddie-v06.7.png?format=600w"></div><div class="pbd"><h4>Boobly Hoodie — Style 3</h4><div class="price">$39.99</div><a class="btn btn-red btn-sm" href="https://www.hiphopboobly.store" target="_blank">Buy Now ›</a></div></div>
+      </div>
+      <div style="text-align:center;margin-top:32px"><a class="btn btn-blue" href="https://www.hiphopboobly.store" target="_blank"><span class="ic">🛍️</span> Visit the full store</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: ABOUT  (old "team-2")
+     ======================================================= -->
+<section class="page" id="about">
+  <div class="phead"><div class="wrap"><h1>Meet the Squad 👫</h1><p>Be Kind. Be You. Be Great.</p></div></div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="about-hero">
+        <img alt="About Hip Hop Boobly" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/3a6af47f-20d0-499f-97fe-0d5528c0264c/HHB_about.jpg?format=1200w">
+        <div>
+          <span class="eyebrow" style="text-align:left">Our Story</span>
+          <h2 style="font-size:32px;margin-bottom:12px">Music that helps kids grow 🌟</h2>
+          <p class="mission">Hip Hop Boobly creates fun, educational songs and shows that inspire kids to be confident, kind and unstoppable. Every episode mixes catchy music, positive messages and learning that little ones love and parents trust.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip tight">
+    <div class="wrap">
+      <h2 class="sec-h2">The Hip Hop Boobly Squad</h2>
+      <p class="sec-sub">A super team of friends teaching kids around the world positive lessons.</p>
+      <div class="chars">
+        <div class="char k0"><div class="ch-img"><img alt="Boobly" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/845eb588-949f-4139-a913-0df380982206/Boobly.png?format=600w"></div><div class="cb"><h4>Boobly</h4><p>The star of the show! Boobly leads the squad with music, energy and big positive vibes.</p></div></div>
+        <div class="char k1"><div class="ch-img"><img alt="Hip Hop Mimi" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/deee4071-6f97-4394-810c-af3c1f30b335/mimi_0003+%281%29.png?format=600w"></div><div class="cb"><h4>Hip Hop Mimi</h4><p>A young motivational speaker and Boobly's best friend. Together they make a super team.</p></div></div>
+        <div class="char k2"><div class="ch-img"><img alt="Rockstar Kimmy" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/e8cb50de-cd72-4480-9246-d8e3445d8600/kimmy_2.png?format=600w"></div><div class="cb"><h4>Rockstar Kimmy</h4><p>Someone has to keep up with the kids. Their teacher, Rockstar Kimmy, makes it happen.</p></div></div>
+        <div class="char k3"><div class="ch-img"><img alt="Hip Hop Boom" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/c01b6bf8-2af0-410a-b850-9cb2cfe2a47c/0003.png?format=600w"></div><div class="cb"><h4>Hip Hop Boom</h4><p>A teenage music genius! Boobly and Boom make creative music that teaches kids positive lessons.</p></div></div>
+        <div class="char k4"><div class="ch-img"><img alt="Dezzio" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/d60a511d-076d-4d01-a3a6-7dd5534b9edf/deezyo_0001.png?format=600w"></div><div class="cb"><h4>Dezzio</h4><p>The O.G. of the squad. He always has good advice to share with everyone.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     PAGE: CONTACT
+     ======================================================= -->
+<section class="page" id="contact">
+  <div class="phead"><div class="wrap"><h1>Get in Touch ✉️</h1><p>We'd love to hear from you!</p></div></div>
+  <div class="strip">
+    <div class="wrap">
+      <div class="split">
+        <div class="formcard">
+          <h3>Send a Message</h3>
+          <p class="fp">Questions, bookings or just saying hi — drop us a note.</p>
+          <div class="two">
+            <div class="field"><label>Name</label><input placeholder="Your name"></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+          </div>
+          <div class="field"><label>Subject</label><input placeholder="How can we help?"></div>
+          <div class="field"><label>Message</label><textarea rows="4" placeholder="Write your message…"></textarea></div>
+          <button class="btn btn-blue" style="width:100%;justify-content:center">Send Message</button>
+        </div>
+        <div>
+          <span class="eyebrow" style="text-align:left">Contact Details</span>
+          <h2 style="font-size:30px;margin-bottom:18px">Say hello 👋</h2>
+          <p style="font-weight:800;font-size:15px;margin:0 0 4px;color:var(--gray)">EMAIL</p>
+          <p style="font-weight:700;margin:0 0 18px"><a href="mailto:hiphopbooblyinfo@gtmmedia.com" style="color:var(--blue)">hiphopbooblyinfo@gtmmedia.com</a></p>
+          <p style="font-weight:800;font-size:15px;margin:0 0 4px;color:var(--gray)">MAIL</p>
+          <p style="font-weight:700;margin:0 0 18px">P.O. Box 38218, Houston, TX 77238</p>
+          <p style="font-weight:800;font-size:15px;margin:0 0 8px;color:var(--gray)">FOLLOW</p>
+          <div class="ft-soc" style="justify-content:flex-start">
+            <a href="https://www.youtube.com/@HipHopBooblyShow" target="_blank" style="background:#E3F2FD;color:var(--blue)">▶</a>
+            <a href="http://instagram.com/hiphopboobly" target="_blank" style="background:#FCE4EC;color:#C2185B">📷</a>
+            <a href="#" target="_blank" style="background:#ECEFF1;color:#111">🎵</a>
+            <a href="https://www.facebook.com/HipHopBooblyShow" target="_blank" style="background:#E3F2FD;color:#1877F2">f</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =======================================================
+     SHARED FOOTER  (Wix: site footer, same on every page)
+     ======================================================= -->
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <div>
+      <img class="logo-ft" alt="Hip Hop Boobly" src="https://images.squarespace-cdn.com/content/v1/63ae717eb61bcf6979e6d78e/7eff77fc-3b08-450d-92ba-b43b18ca1055/hip+hop+boobly+logo+png.png?format=400w">
+      <p>Fun, educational songs and shows that inspire kids to be confident, kind and unstoppable.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a data-go="watch">Watch</a><br><a data-go="music">Music</a><br>
+      <a data-go="resources">Resources</a><br><a data-go="school">School Visits</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a data-go="pals">Boobly Pals</a><br><a data-go="shop">Shop</a><br>
+      <a data-go="about">About</a><br><a data-go="contact">Contact</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <a href="mailto:hiphopbooblyinfo@gtmmedia.com">hiphopbooblyinfo@gtmmedia.com</a>
+      <p>P.O. Box 38218<br>Houston, TX 77238</p>
+      <div class="ft-soc">
+        <a href="https://www.youtube.com/@HipHopBooblyShow" target="_blank">▶</a>
+        <a href="http://instagram.com/hiphopboobly" target="_blank">📷</a>
+        <a href="#" target="_blank">🎵</a>
+        <a href="https://www.facebook.com/HipHopBooblyShow" target="_blank">f</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">© <span id="yr"></span> Hip Hop Boobly Show · Privacy Policy · Be Kind, Be You, Be Great</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('show',p.id===id));
+  document.querySelectorAll('nav.menu a').forEach(a=>a.classList.toggle('active',a.dataset.go===id));
+  document.getElementById('menu').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-go]');
+  if(t){e.preventDefault();go(t.dataset.go);}
+});
+</script>
+</body>
+</html>
